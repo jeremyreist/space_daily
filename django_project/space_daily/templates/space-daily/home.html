@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- imports -->
+    <link rel="stylesheet" type="text/css" href="{% static 'space_daily/css/styles.css' %}" />
+    <script src="https://kit.fontawesome.com/8e52d952f2.js" crossorigin="anonymous"></script>
+    <script src="{% static 'space_daily/js/main.js' %}"></script>
+    <title>Space Daily</title>
+</head>
+<body onload="load_images();">
+    <header class="header">
+        <div class="flex-item header-logo">
+            <img src="{% static 'space_daily/images/space_daily_logo.svg' %}">
+        </div>
+        <div class="flex-item header-filter">
+
+        </div>
+    </header>
+    <div class="flex-container">
+        <div id="main-page"></div>
+        <div class="flex-item" id="loading">
+            <img src="{% static 'space_daily/images/loading.gif' %}">
+        </div>
+        <!-- <div class="flex-item space-item">
+            <div class="space-image">
+                <img src=https://apod.nasa.gov/apod/image/2201/CometLeonard_Estes_960.jpg>
+            </div>
+            <div class="image-description">
+                <div class="text">
+                    <h1>Title</h1>
+                    <h3>Short Description</h3>
+                    <p>Long Description</p>
+                </div>
+                <div class="like-container">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+</body>
+</html>
