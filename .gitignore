@@ -1,2 +1,3 @@
+# Below is created during development runtime
 __pycache__/
-migrations/__pycache__/__init__.cpython-310.pyc
+migrations/__pycache__/
