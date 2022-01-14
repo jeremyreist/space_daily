@@ -31,79 +31,89 @@
   min-height: 0;
   min-width: 0;
   margin: 0;
-  color: #fff;
 }
 
 a {
   text-decoration: none;
 }
 
-html, body{
-  overflow-x: hidden; 
+html,
+body {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   max-width: 100%;
   background-color: var(--clr-background);
   font-size: 80.5%;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
   html {
-    font-size: 42.5%;
+    font-size: 49.5%;
+  }
+  p{
+    display: none;
   }
 }
 
 /* Default font size & weights */
 
-h1{
-    font-family: "Playfair Display", "serif";
-    font-weight: 400;
-    font-size: 4em;
-    opacity: 100%;
-    padding-bottom: 5px;
+h1 {
+  font-family: "Playfair Display", "serif";
+  font-weight: 400;
+  font-size: 4em;
+  opacity: 100%;
+  padding-bottom: 5px;
+  color: #fff;
 }
 
-h2{
-    font-family: "Roboto", "sans-serif";
-    font-weight: 400;
-    font-size: 3em;
-    opacity: 87%;
+h2 {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 400;
+  font-size: 3em;
+  opacity: 87%;
+  color: #fff;
 }
 
-h3{
-    font-family: "Roboto", "sans-serif";
-    font-weight: 400;
-    font-size: 2.33em;
-    opacity: 60%;
-    padding-bottom: 5px;
+h3 {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 400;
+  font-size: 2.33em;
+  opacity: 60%;
+  padding-bottom: 5px;
+  color: #fff;
 }
 
-h4{
-    font-family: "Roboto", "sans-serif";
-    font-weight: 400;
-    font-size: 1.67em;
-    opacity: 60%;
+h4 {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 400;
+  font-size: 1.67em;
+  opacity: 60%;
+  color: #fff;
 }
 
-p{
+p {
   font-family: "Roboto", "sans-serif";
   font-weight: 400;
   font-size: 1.33em;
   opacity: 60%;
   line-height: 2.08em;
+  color: #fff;
 }
 
-p.thick{
-    font-family: "Roboto", "sans-serif";
-    font-weight: 500;
-    font-size: 1.33em;
-    opacity: 87%;
+p.thick {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 500;
+  font-size: 1.33em;
+  opacity: 87%;
+  color: #fff;
 }
 
-.button{
-    font-family: "Roboto", "sans-serif";
-    font-weight: 500;
-    font-size: 14pt;
-    opacity: 87%;
+.button {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 500;
+  font-size: 14pt;
+  opacity: 87%;
+  color: #fff;
 }
 
 /* default flex container and item setup */
@@ -134,71 +144,109 @@ p.thick{
 
 /* Header */
 
-.header{
+.header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--clr-background-darkmode);
   border: 1px solid rgba(255, 255, 255, .12);
-  padding: 10px;
+  padding: 3px;
   padding-left: 20px;
 }
 
-.header-logo{
-  width: fit-content;
+.header-logo {
+  max-width: min(1000px, 100vw);
   padding: 0px;
+  display: flex;
+  align-items: center;
 }
 
-.header-logo img{
-  width: 200px;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 5px;
+.header-logo img {
+  width: 220px;
 }
 
-.header-filter{
-  background-color: #780000;
+.header-filter {
   max-width: 400px;
   width: fit-content;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-filter h4 {
+  opacity: 90%;
+}
+
+input[type=checkbox] {
+  transform: scale(1.3);
+}
+
+@media (max-width:768px) {
+  input[type=checkbox] {
+    transform: scale(1);
+  }
 }
 
 /* Space Images */
 
-#loading{
-  max-width: 75px;
+#loading {
+  max-width: 105px;
 }
 
-.space-item{
-  /* Using 6% as background for depth */
+.space-item {
+  /* Using 6% opacity as background for depth */
   background-color: rgba(255, 255, 255, .06);
   border-radius: 9px;
-  border: 1px solid rgba(255, 255, 255, .12);;
+  border: 1px solid rgba(255, 255, 255, .12);
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  max-width: min(1000px, 95vw);
   margin-top: 10px;
 }
 
-.image-description{
+.image-description {
   align-items: flex-start;
-  display:flex;
+  display: flex;
   width: 100%;
   height: fit-content;
   padding: 20px;
 }
 
-.space-image img{
+.space-image img {
   max-height: fit-content;
-  max-width: min(950px,100vw);;
+  max-width: min(950px, 90vw);
   border-radius: 9px;
-  border: 2px solid rgba(255, 255, 255, .12);;
+  border: 2px solid rgba(255, 255, 255, .12);
 }
 
-.like-container{
+/* Like Button and Share Button*/
+
+.button-container {
+  min-width: 50px;
+  min-height: 100px;
   display: flex;
-  margin-left: auto;
-  padding-right: 12px;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  margin-left: auto;
+  font-size: 2.5rem;
+  transition: 0.1s ease-in-out;
+}
+
+.like-button {
+  color: var(--clr-primary);
+  padding-right:3rem;
+}
+
+.share-button {
+  padding: 12px;
+  color: var(--clr-white);
+  opacity: 87%;
+}
+
+.liked {
+  font-size: 3rem;
+  transition: 0.1s ease-in-out;
 }
