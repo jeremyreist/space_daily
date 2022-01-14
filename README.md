@@ -3,7 +3,7 @@ A simple to use webpage that displays the image of the day from Nasa.
 Liked images can be filtered for later viewing.
 
 ## Update v1.1
-Removed Django project folder so this acts as an app that can be added to any django project.
+Made it easier to use submodule to add to existing django project. By removing the Django project folder so this acts as an app that can be added to any django project.
 Detailed setup instructions added below.
 
 ## Update v1.0
