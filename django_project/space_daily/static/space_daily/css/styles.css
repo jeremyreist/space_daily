@@ -233,6 +233,7 @@ input[type=checkbox] {
   margin-left: auto;
   font-size: 2.5rem;
   transition: 0.1s ease-in-out;
+  padding-right:2rem;
 }
 
 .like-button {
