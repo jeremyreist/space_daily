@@ -14,6 +14,7 @@ Redesigned color pallate and logo. See design folder for design outline.
 Add the space_daily folder to the django project folder to add it as an app.
 
 Add the following to your django project urls.py:
+
     from django.urls import path, include
 
     urlpatterns = [
@@ -22,6 +23,7 @@ Add the following to your django project urls.py:
     ]
 
 Add the following to your django project settings.py:
+
     INSTALLED_APPS = [
         'space_daily.apps.SpaceDailyConfig',
         ...
