@@ -6,28 +6,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{% static 'space_daily/images/space_daily_icon.svg' %}"/>
+    <meta name="author" content="Jeremy Reist">
+
+    <link rel="icon" href="{% static 'space_daily/images/space_daily_icon.svg' %}" />
 
     <!-- imports -->
+    <link href="{% static 'space_daily/css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'space_daily/css/styles.css' %}" />
     <script src="https://kit.fontawesome.com/8e52d952f2.js" crossorigin="anonymous"></script>
     <script src="{% static 'space_daily/js/main.js' %}"></script>
     <title>Space Daily</title>
+
+
 </head>
 
 <body onload="load_images();">
     <header class="header">
         <div class="flex-item header-logo">
             <img src="{% static 'space_daily/images/space_daily_logo.svg' %}">
-            <div class="flex-item header-filter">
-                <input type="checkbox" id="liked_filter" name="show_like_only" onclick="liked_only(this)">
-                <label for="show_like_only">
-                    <h4>&nbsp;&nbsp;Show Liked</h4>
-                </label><br>
+            <div class="flex-item header-filter dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Filter
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li class="filter_checkbox">                
+                        <input type="checkbox" id="liked_filter" name="show_like_only" onclick="liked_only(this)">
+                        <label for="show_like_only">
+                            &nbsp;Show Liked Only
+                        </label>
+                    </li>
+                </ul>
+              </div>
+            <div class="">
+
             </div>
         </div>
     </header>
+
     <div class="flex-container">
+        <!-- <div class="flex-item space-item">
+            <div class="space-image"> <a href="https://apod.nasa.gov/apod/image/2201/thundercloud_dyer_2000.jpg"> <img
+                        src="https://apod.nasa.gov/apod/image/2201/thundercloud_dyer_1592.jpg"> </a> </div>
+            <div class="image-description">
+                <div class="text">
+                    <h1>A Retreating Thunderstorm at Sunset</h1>
+                    <h3>2022-01-16</h3>
+                    <p>What type of cloud is that? This retreating cumulonimbus cloud, more commonly called a
+                        thundercloud, is somewhat unusual as it contains the unusual bumpiness of a mammatus cloud on
+                        the near end, while simultaneously producing falling rain on the far end. Taken in mid-2013 in
+                        southern Alberta, Canada, the cloud is moving to the east, into the distance, as the sun sets in
+                        the west, behind the camera. In the featured image, graphic sunset colors cross the sky to give
+                        the already photogenic cloud striking orange and pink hues. A darkening blue sky covers the
+                        background. Further in the distance, a rising, waxing, gibbous moon is visible on the far right.
+                    </p>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="btn btn-outline-danger custom-button" onclick="like(this)"><i class="fas fa-heart"></i></button>
+                    <button type="button" class="btn btn-outline-primary custom-button" onclick="share(this)" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="focus" data-bs-content="Link copied to clipboard."><i class="fas fa-share-square"></i></button>    
+                </div> 
+            </div>
+        </div> -->
         <div id="main-page"></div>
         <div class="flex-item" id="loading">
             <img src="{% static 'space_daily/images/loading.gif' %}">
@@ -35,6 +73,8 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="{% static 'space_daily/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 
 </html>

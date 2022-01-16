@@ -63,7 +63,7 @@ function show_images(data) {
                 const index = liked_images.indexOf(image.hdurl);
                 if (index > -1) {
                     // If there are some images liked and this image is one of them, add the class name to the insert.
-                    liked_insert = 'fas liked';
+                    liked_insert = 'liked active" aria-pressed="true"';
                 }
             }
             // The image block insert, with apropriate data entrys.
@@ -81,9 +81,9 @@ function show_images(data) {
                         <p>' + image.explanation + '</p>\
                     </div>\
                     <div class="button-container">\
-                    <i class="far fa-heart like-button ' + liked_insert + '" onclick="like(this)" data-link="' + image.hdurl + '"></i>\
-                    <i class="fas fa-share-alt share-button" onclick="share(this)" data-link="' + image.hdurl + '"></i>\
-                    </div>\
+                    <button type="button" class="btn btn-outline-danger custom-button ' + liked_insert + '" onclick="like(this)" data-link="' + image.hdurl + '"><i class="fas fa-heart"></i></button>\
+                    <button type="button" class="btn btn-outline-primary custom-button" onclick="share(this)" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="focus" data-bs-content="Link copied to clipboard." data-link="' + image.hdurl + '"><i class="fas fa-share-square"></i></button>\
+                </div>\
                 </div>\
             </div>' + document.getElementById("main-page").innerHTML;
             document.getElementById("main-page").innerHTML = insert;
@@ -94,6 +94,12 @@ function show_images(data) {
     var completed = document.getElementById("main-page");
     completed.innerHTML += "<div id=\"main-page\"></div>";
     completed.id = 'completed-main-page';
+
+    // Make the popovers for the share button work.
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+    var popoverList = popoverTriggerList.map(function(popoverTrigger){
+        return new bootstrap.Popover(popoverTrigger);
+    }); 
 
 }
 
@@ -116,7 +122,8 @@ window.onscroll = function () {
  */
 function like(element) {
     // toggle the heart that is full, and add liked to the element so we know what to delete.
-    element.classList.toggle('fas')
+    element.classList.toggle('aria-pressed="true"')
+    element.classList.toggle('active')
     element.classList.toggle('liked')
 
     if (element.className.includes("liked")) {
@@ -136,14 +143,12 @@ function like(element) {
  */
 function share(element) {
     // toggle the heart that is full, and add liked to the element so we know what to delete.
-    element.classList.toggle('fa-check')
-    element.classList.toggle('fa-share-alt')
     var copyText = element.dataset.link;
     /* Copy the text inside the text field */
     navigator.clipboard.writeText(copyText);
 
-    /* Alert the copied text */
-    alert("Copied the link to the HD image");
+    // /* Alert the copied text */
+    // alert("Copied the link to the HD image");
 }
 
 /**
