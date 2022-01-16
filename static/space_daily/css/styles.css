@@ -239,3 +239,19 @@ p.thick {
   font-size: 1.5rem;
   margin-right: 8px;
 }
+
+.liked{
+  animation: grow-and-shrink 0.35s ease-in;
+}
+
+@keyframes grow-and-shrink {
+  0% {
+    font-size: 1.5rem;
+  }
+  50% {
+    font-size: 1.65rem;
+  }
+  100% {
+    font-size: 1.5rem;
+  }
+}
