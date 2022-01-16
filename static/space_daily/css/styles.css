@@ -244,6 +244,12 @@ p.thick {
   animation: grow-and-shrink 0.35s ease-in;
 }
 
+.socials{
+  font-size: 2rem;
+  padding: 20px;
+  color: #fff;
+}
+
 @keyframes grow-and-shrink {
   0% {
     font-size: 1.5rem;
